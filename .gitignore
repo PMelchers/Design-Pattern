@@ -1,1 +1,8 @@
 .vs/
+/obj/Release/net6.0
+/obj/Debug/net6.0
+/obj/Debug/net6.0
+/obj/Debug
+obj/Debug/net6.0/ObserverPattern.AssemblyInfo.cs
+obj/Debug/net6.0/ObserverPattern.AssemblyInfoInputs.cache
+obj/Debug/net6.0/ObserverPattern.AssemblyInfo.cs

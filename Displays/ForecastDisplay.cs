@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ObserverPattern.Displays
 {
-    internal class ForecastDisplay : Observer, DisplayElement
+    internal class ForecastDisplay : WeatherDisplays
     {
         private float temperature;
         private float humidity;
@@ -16,13 +16,13 @@ namespace ObserverPattern.Displays
         { 
             // Set the field and register itself with the weatherdata subject
         }
-        public void Update(float temp, float humidity, float pressure)
+        public override void Update(float temp, float humidity, float pressure)
         {
             // Set the correct fields with the relevant parameters
             Display();
         }
 
-        public void Display()
+        public override void Display()
         {
             // Print a forecast message based on the current temperature and humidity
         }
