@@ -14,17 +14,39 @@ namespace ObserverPattern.Displays
         private Subject weatherData;
         public ForecastDisplay(Subject weatherData) 
         { 
-            // Set the field and register itself with the weatherdata subject
+            this.weatherData = weatherData;
+            weatherData.RegisterObserver(this);
         }
         public override void Update(float temp, float humidity, float pressure)
         {
-            // Set the correct fields with the relevant parameters
+            this.temperature = temp;
+            this.humidity = humidity;
             Display();
         }
 
         public override void Display()
         {
-            // Print a forecast message based on the current temperature and humidity
+            // Generate forecast based on temperature and humidity
+            string forecast;
+
+            if (humidity > 80)
+            {
+                forecast = "Trek je paraplu's uit de kast";
+            }
+            else if (temperature > 25)
+            {
+                forecast = "Mooi weer komt er aan";
+            }
+            else if (temperature > 15)
+            {
+                forecast = "Aangenaam weer verwacht";
+            }
+            else
+            {
+                forecast = "Koud weer op komst";
+            }
+
+            Console.WriteLine("Forecast: " + forecast);
         }
     }
 }
