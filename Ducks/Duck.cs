@@ -9,6 +9,22 @@ internal abstract class Duck
     protected SwimBehavior swimBehavior;
 
     public abstract void Display();
+
+    public void SetQuackBehavior(QuackBehavior quackBehavior)
+    {
+        this.quackBehavior = quackBehavior;
+    }
+
+    public void SetFlyBehavior(FlyBehavior flyBehavior)
+    {
+        this.flyBehavior = flyBehavior;
+    }
+
+    public void SetSwimBehavior(SwimBehavior swimBehavior)
+    {
+        this.swimBehavior = swimBehavior;
+    }
+
     public void PerformQuack()
     {
         quackBehavior.Quack();
