@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DecoratorPattern.Beverages
 {
-    internal class Espresso : Beverage
+    internal class Chocolate : Beverage
     {
-        public Espresso(Beverage beverage = null, Size? size = null)
+        public Chocolate(Beverage beverage = null, Size? size = null)
         {
-            description = "Espresso";
+            description = "Chocolate";
             this.baseBeverage = beverage;
             if (beverage != null)
             {
@@ -21,6 +21,7 @@ namespace DecoratorPattern.Beverages
                 this.Size = size.Value;
             }
         }
+
         public override string GetDescription()
         {
             if (baseBeverage != null)
@@ -29,13 +30,14 @@ namespace DecoratorPattern.Beverages
             }
             return description;
         }
+
         public override double cost()
         {
             if (baseBeverage != null)
             {
-                return 1.99 + baseBeverage.cost();
+                return 1.50 + baseBeverage.cost();
             }
-            return 1.99;
+            return 1.50;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DecoratorPattern.Beverages
 {
-    enum Size
+    public enum Size
     {
         TALL,
         GRANDE,
@@ -19,6 +19,10 @@ namespace DecoratorPattern.Beverages
 
         protected string description = "Unknown";
         protected Beverage baseBeverage = null;
+        public Beverage()
+        {
+            size = Size.TALL; // default size
+        }
         
 
         public virtual string GetDescription()

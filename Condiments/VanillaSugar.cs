@@ -1,15 +1,9 @@
-﻿using DecoratorPattern.Beverages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using DecoratorPattern.Beverages;
 namespace DecoratorPattern.Condiments
 {
-    internal class Whip : CondimentDecorator
+    internal class VanillaSugar : CondimentDecorator
     {
-        public Whip(Beverage beverage)
+        public VanillaSugar(Beverage beverage)
         {
             this.baseBeverage = beverage;
         }
@@ -22,7 +16,7 @@ namespace DecoratorPattern.Condiments
 
         public override string GetDescription()
         {
-            return baseBeverage.GetDescription() + ", Whip";
+            return baseBeverage.GetDescription() + ", Vanilla Sugar";
         }
     }
 }
