@@ -1,6 +1,6 @@
-using DecoratorPattern.Beverages;
+using FactoryPattern.Beverages;
 
-namespace DecoratorPattern.Condiments
+namespace FactoryPattern.Condiments
 {
     internal abstract class CondimentDecorator : Beverage
     {

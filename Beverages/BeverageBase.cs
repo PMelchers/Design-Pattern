@@ -1,4 +1,4 @@
-namespace DecoratorPattern.Beverages
+namespace FactoryPattern.Beverages
 {
     // A beverage that can serve as the base of a drink (Espresso, Chocolate, ...)
     // It can also be combined with another beverage, e.g. a Doppio is an Espresso on top of an Espresso

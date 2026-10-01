@@ -1,4 +1,4 @@
-namespace DecoratorPattern.Beverages
+namespace FactoryPattern.Beverages
 {
     public enum Size
     {
