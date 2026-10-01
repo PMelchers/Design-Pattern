@@ -1,0 +1,5 @@
+/.vs/FactoryPattern.slnx
+/bin/Debug
+/obj
+# Markdown files
+*.md
