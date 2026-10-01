@@ -6,3 +6,6 @@
 obj/Debug/net6.0/ObserverPattern.AssemblyInfo.cs
 obj/Debug/net6.0/ObserverPattern.AssemblyInfoInputs.cache
 obj/Debug/net6.0/ObserverPattern.AssemblyInfo.cs
+
+# Markdown files
+*.md
