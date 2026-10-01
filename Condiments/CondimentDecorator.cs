@@ -28,6 +28,7 @@ namespace FactoryPattern.Condiments
             return PriceBySize() + baseBeverage!.cost();
         }
 
+        // The price of a condiment depends on the size of the beverage it is added to
         private double PriceBySize()
         {
             switch (Size)

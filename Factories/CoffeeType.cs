@@ -1,5 +1,6 @@
 namespace FactoryPattern.Factories
 {
+    // The only coffee mixes that can be ordered
     public enum CoffeeType
     {
         Espresso,
