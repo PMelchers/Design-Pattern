@@ -1,22 +1,11 @@
 using DecoratorPattern.Beverages;
+
 namespace DecoratorPattern.Condiments
 {
     internal class BlackChocolate : CondimentDecorator
     {
-        public BlackChocolate(Beverage beverage)
+        public BlackChocolate(Beverage beverage) : base(beverage, "Black Chocolate", 0.35, 0.50, 0.70)
         {
-            this.baseBeverage = beverage;
-        }
-
-        public override double cost()
-        {
-            double extra = PriceBySize(0.35, 0.50, 0.70);
-            return extra + baseBeverage.cost();
-        }
-
-        public override string GetDescription()
-        {
-            return baseBeverage.GetDescription() + ", Black Chocolate";
         }
     }
 }

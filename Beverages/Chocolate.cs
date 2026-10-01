@@ -1,43 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace DecoratorPattern.Beverages
 {
-    internal class Chocolate : Beverage
+    internal class Chocolate : BeverageBase
     {
-        public Chocolate(Beverage beverage = null, Size? size = null)
+        public Chocolate(Beverage? beverage = null, Size? size = null) : base("Chocolate", 1.50, beverage, size)
         {
-            description = "Chocolate";
-            this.baseBeverage = beverage;
-            if (beverage != null)
-            {
-                this.Size = beverage.Size;
-            }
-            else if (size.HasValue)
-            {
-                this.Size = size.Value;
-            }
-        }
-
-        public override string GetDescription()
-        {
-            if (baseBeverage != null)
-            {
-                return baseBeverage.GetDescription() + ", " + description;
-            }
-            return description;
-        }
-
-        public override double cost()
-        {
-            if (baseBeverage != null)
-            {
-                return 1.50 + baseBeverage.cost();
-            }
-            return 1.50;
         }
     }
 }
