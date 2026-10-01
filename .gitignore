@@ -1,0 +1,5 @@
+/.vs/DecoratorPattern.slnx
+/bin/Debug
+/obj
+# Markdown files
+*.md
