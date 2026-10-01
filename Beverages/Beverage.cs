@@ -8,7 +8,6 @@ namespace DecoratorPattern.Beverages
     }
     internal abstract class Beverage
     {
-        // A beverage that wraps another beverage shares its size, so the size can be set on the outermost beverage
         public Size Size
         {
             get { return baseBeverage != null ? baseBeverage.Size : size; }

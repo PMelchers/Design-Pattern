@@ -154,7 +154,6 @@ namespace DecoratorPattern
             irish = new Whip(irish);
             PrintBeverage(irish);
 
-            // Opdracht #3: the price of the condiments depends on the size of the beverage
             Console.WriteLine();
             Console.WriteLine("Mocha in all sizes:");
             foreach (Size size in Enum.GetValues<Size>())
@@ -163,7 +162,7 @@ namespace DecoratorPattern
                 sizedMocha = new ChocolateSauce(sizedMocha);
                 sizedMocha = new SteamedMilk(sizedMocha);
                 sizedMocha = new Whip(sizedMocha);
-                sizedMocha.Size = size; // set on the outermost decorator, the whole drink changes size
+                sizedMocha.Size = size;
                 Console.Write(size + ": ");
                 PrintBeverage(sizedMocha);
             }
