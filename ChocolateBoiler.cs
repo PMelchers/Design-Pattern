@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Singleton
 {
     internal class ChocolateBoiler
     {
-        // volatile makes sure a thread never sees a reference to a partially constructed boiler
-        private static volatile ChocolateBoiler? uniqueInstance;
+        private static volatile ChocolateBoiler? instance;
         private static readonly object instanceLock = new object();
 
-        // Protects empty and boiled, so the check-then-act logic in fill, drain and boil is atomic
         private readonly object stateLock = new object();
 
         private bool empty;
@@ -21,35 +13,34 @@ namespace Singleton
         public bool IsEmpty { get { lock (stateLock) { return this.empty; } } }
         public bool IsBoiled { get { lock (stateLock) { return this.boiled; } } }
 
-        // The constructor is private, so the only way to get the boiler is through GetInstance()
         // This code is only started when the boiler is empty
         private ChocolateBoiler()
         {
             empty = true;
             boiled = false;
         }
-        // Double-checked locking: the first check skips the lock once the instance exists,
-        // the second check (inside the lock) makes sure only one thread creates it
+
         public static ChocolateBoiler GetInstance()
         {
-            if (uniqueInstance == null)
+            if (instance == null)
             {
                 lock (instanceLock)
                 {
-                    if (uniqueInstance == null)
+                    if (instance == null)
                     {
-                        uniqueInstance = new ChocolateBoiler();
+                        instance = new ChocolateBoiler();
                     }
                 }
             }
-            return uniqueInstance;
+            return instance!;
         }
+
         // To fill the boiler it must be empty and once it is full, we set the empty and boiled flag
         public void fill()
         {
             lock (stateLock)
             {
-                if(empty)
+                if (empty)
                 {
                     empty = false;
                     boiled = false;
@@ -62,7 +53,7 @@ namespace Singleton
         {
             lock (stateLock)
             {
-                if(!empty && boiled)
+                if (!empty && boiled)
                 {
                     empty = true;
                 }
@@ -74,7 +65,7 @@ namespace Singleton
         {
             lock (stateLock)
             {
-                if(!empty && !boiled)
+                if (!empty && !boiled)
                 {
                     boiled = true;
                 }
